@@ -57,7 +57,6 @@ namespace ChatbotApp
         //{
         //    MLContext chatbotContext = new MLContext();
 
-        //    string chatbotModelPath = "ChatModel.zip";
 
         //    chatbotContext.Model.Save(ChatModel, DataSetSchemaImporterExtension, chatbotModelPath);
         //}
