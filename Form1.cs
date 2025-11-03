@@ -18,7 +18,6 @@ namespace ChatbotApp
             InitializeComponent();
         }
 
-
         // This is the method that will recieve a user's question, send it to
         // the chatbot model, receive an answer from the model, and return that answer
         // to the user.
