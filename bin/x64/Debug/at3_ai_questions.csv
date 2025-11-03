@@ -1,0 +1,201 @@
+Question,Answer,Context,AnswerIndex
+What is Artificial Intelligence (AI)?,The simulation of human intelligence in machines.,AI Basics,1
+What is Machine Learning (ML)?,A subset of AI where machines learn from data.,ML Basics,2
+What is Deep Learning (DL)?,A subset of ML using neural networks with many layers.,DL Basics,3
+What is a neural network?,A model inspired by the human brain that processes data in layers.,DL Basics,4
+What is supervised learning?,Learning from labeled data to make predictions.,ML Concepts,5
+What is unsupervised learning?,Finding patterns in unlabeled data.,ML Concepts,6
+What is reinforcement learning?,Learning by receiving rewards or penalties for actions.,ML Concepts,7
+What is a dataset?,A collection of data used to train or test models.,Data Handling,8
+What is feature engineering?,Creating or transforming input variables for better model performance.,Feature Engineering,9
+What is a model in ML?,A mathematical representation learned from data to make predictions.,ML Concepts,10
+What is training a model?,The process of feeding data to a model so it can learn.,ML Concepts,11
+What is overfitting?,"When a model learns training data too well, including noise, and performs poorly on new data.",ML Concepts,12
+What is underfitting?,When a model is too simple and cannot capture the underlying pattern of the data.,ML Concepts,13
+What is a classification problem?,Predicting a discrete label for a given input.,ML Concepts,14
+What is a regression problem?,Predicting a continuous value for a given input.,ML Concepts,15
+What is a decision tree?,A tree-like model used to make decisions based on feature values.,ML Concepts,16
+What is random forest?,An ensemble of decision trees to improve prediction accuracy.,ML Concepts,17
+What is a support vector machine (SVM)?,A model that finds a hyperplane to separate classes in feature space.,ML Concepts,18
+What is k-nearest neighbors (k-NN)?,A model that predicts based on the closest data points.,ML Concepts,19
+What is a perceptron?,The simplest type of artificial neuron.,DL Basics,20
+What is a sigmoid function?,A function that maps values to a range between 0 and 1.,DL Concepts,21
+What is ReLU?,"Rectified Linear Unit, a common activation function in neural networks.",DL Concepts,22
+What is a convolutional neural network (CNN)?,A neural network specialized for processing grid-like data such as images.,DL Concepts,23
+What is a recurrent neural network (RNN)?,A neural network designed to handle sequential data.,DL Concepts,24
+What is LSTM?,"Long Short-Term Memory, a type of RNN that captures long-term dependencies.",DL Concepts,25
+What is GRU?,"Gated Recurrent Unit, a simpler variant of LSTM.",DL Concepts,26
+What is an epoch?,One complete pass through the training dataset.,ML Concepts,27
+What is a batch?,A subset of the dataset used for one iteration of training.,ML Concepts,28
+What is a learning rate?,A hyperparameter that controls how much the model adjusts per iteration.,ML Concepts,29
+What is gradient descent?,An optimization algorithm to minimize loss by updating weights.,ML Concepts,30
+What is a loss function?,A function that measures how well the model is performing.,ML Concepts,31
+What is mean squared error (MSE)?,A loss function used for regression problems.,ML Concepts,32
+What is cross-entropy loss?,A loss function commonly used for classification problems.,ML Concepts,33
+What is a bias in neural networks?,A parameter that allows the activation function to be shifted.,DL Concepts,34
+What is a weight in neural networks?,A parameter that controls the influence of an input on the output.,DL Concepts,35
+What is activation function?,A function applied to a neurons output to introduce non-linearity.,DL Concepts,36
+What is a layer in a neural network?,A set of neurons that process inputs and pass outputs to the next layer.,DL Concepts,37
+What is a hidden layer?,Layers of neurons between input and output layers.,DL Concepts,38
+What is the output layer?,The final layer that produces the prediction.,DL Concepts,39
+What is a softmax function?,A function that converts outputs into probabilities for multi-class classification.,DL Concepts,40
+What is batch normalization?,A technique to normalize layer inputs to stabilize training.,DL Concepts,41
+What is dropout?,Randomly setting some neuron outputs to zero to prevent overfitting.,DL Concepts,42
+What is data augmentation?,Generating more training data by transforming existing data.,Data Handling,43
+What is one-hot encoding?,A method to represent categorical data as binary vectors.,Feature Engineering,44
+What is label encoding?,Converting categorical labels to numerical values.,Feature Engineering,45
+What is principal component analysis (PCA)?,A method to reduce feature dimensionality while preserving variance.,Feature Engineering,46
+What is a confusion matrix?,A table showing the number of correct and incorrect predictions by class.,ML Evaluation,47
+What is accuracy?,The proportion of correct predictions among total predictions.,ML Evaluation,48
+What is precision?,The proportion of true positives among all positive predictions.,ML Evaluation,49
+What is recall?,The proportion of true positives among all actual positives.,ML Evaluation,50
+What is data normalization?,"Rescaling data to a standard range, like 0 to 1.",Data Handling,51
+What is data standardization?,Transforming data to have mean 0 and standard deviation 1.,Data Handling,52
+What is a training set?,The portion of data used to train the model.,Data Handling,53
+What is a test set?,The portion of data used to evaluate the model.,Data Handling,54
+What is a validation set?,A subset of data used to tune model hyperparameters.,Data Handling,55
+What is model evaluation?,Assessing a model's performance using metrics.,ML Evaluation,56
+What is accuracy?,The proportion of correct predictions over total predictions.,ML Evaluation,57
+What is a ROC curve?,A graph showing the performance of a classifier at all thresholds.,ML Evaluation,58
+What is AUC?,"Area under the ROC curve, measures classifier quality.",ML Evaluation,59
+What is a hyperparameter?,A parameter set before training that controls the learning process.,ML Concepts,60
+What is regularization?,Techniques to prevent overfitting by penalizing complex models.,ML Concepts,61
+What is L1 regularization?,Adds absolute weight penalties to reduce complexity.,ML Concepts,62
+What is L2 regularization?,Adds squared weight penalties to reduce complexity.,ML Concepts,63
+What is a confusion matrix?,A table to compare predicted vs actual values in classification.,ML Evaluation,64
+What is cross-entropy loss?,A loss function commonly used for classification.,ML Concepts,65
+What is a softmax function?,Converts raw model outputs into probabilities.,DL Concepts,66
+What is backpropagation?,An algorithm to update neural network weights using gradients.,DL Concepts,67
+What is a residual network?,A deep network with shortcut connections to ease training.,DL Concepts,68
+What is transfer learning?,"Using a pre-trained model for a new, related task.",DL Concepts,69
+What is fine-tuning?,Adjusting a pre-trained model on a new dataset.,DL Concepts,70
+What is batch normalization?,A technique to stabilize and accelerate training.,DL Concepts,71
+What is data augmentation?,Creating additional training data by modifying existing data.,Data Handling,72
+What is early stopping?,Halting training when validation performance stops improving.,ML Evaluation,73
+What is a confusion matrix?,A tool to visualize classification performance.,ML Evaluation,74
+What is overfitting?,When a model performs well on training data but poorly on new data.,ML Evaluation,75
+What is underfitting?,When a model is too simple and fails to capture data patterns.,ML Evaluation,76
+What is feature selection?,Choosing the most relevant features for model training.,Feature Engineering,77
+What is dimensionality reduction?,Reducing the number of features while preserving information.,Feature Engineering,78
+What is embedding?,Mapping high-dimensional data into a lower-dimensional space.,DL Concepts,79
+What is a convolution layer?,A layer in CNNs that extracts spatial features.,DL Concepts,80
+What is a pooling layer?,A layer that reduces spatial size in CNNs.,DL Concepts,81
+What is a recurrent layer?,A layer in RNNs that processes sequences.,DL Concepts,82
+What is a fully connected layer?,A layer where every neuron is connected to all neurons in the previous layer.,DL Concepts,83
+What is a learning curve?,A graph showing model performance over training iterations.,ML Evaluation,84
+What is feature engineering?,The process of creating or transforming features for better models.,Feature Engineering,85
+What is text preprocessing?,Cleaning and formatting text data for NLP tasks.,NLP,86
+What is stemming?,Reducing words to their root form in text processing.,NLP,87
+What is lemmatization?,Reducing words to their base dictionary form.,NLP,88
+What is stopword removal?,Removing common words with little meaning from text.,NLP,89
+What is a bag-of-words model?,Representing text as a set of word counts.,NLP,90
+What is TF-IDF?,A weighting scheme for words based on frequency and rarity.,NLP,91
+What is a language model?,A model predicting the probability of word sequences.,NLP,92
+What is sequence-to-sequence modeling?,"Mapping one sequence to another, used in translation.",DL Concepts,93
+What is attention mechanism?,Allows models to focus on important parts of input sequences.,DL Concepts,94
+What is self-attention?,A type of attention where a sequence attends to itself.,DL Concepts,95
+What is a transformer?,A neural network architecture based on attention mechanisms.,DL Concepts,96
+What is BERT?,A pre-trained transformer model for NLP tasks.,DL Concepts,97
+What is GPT?,A generative transformer model for text generation.,DL Concepts,98
+What is fine-tuning a language model?,Adjusting a pre-trained model to a specific task.,DL Concepts,99
+What is word embedding?,A dense vector representation capturing word meaning.,DL Concepts,100
+What is a reward in RL?,Feedback given to an agent to indicate success of an action.,RL Concepts,101
+What is Q-value in RL?,Expected cumulative reward of taking an action in a state.,RL Concepts,102
+What is deep reinforcement learning?,Using deep neural networks to approximate functions in RL.,DL Concepts,103
+What is experience replay?,Storing agent experiences to reuse during training.,RL Concepts,104
+What is epsilon-greedy policy?,Choosing random actions with probability epsilon for exploration.,RL Concepts,105
+What is model-free RL?,Learning optimal policies without modeling the environment.,RL Concepts,106
+What is model-based RL?,Learning a model of the environment to plan actions.,RL Concepts,107
+What is a Q-table?,A table storing Q-values for state-action pairs.,RL Concepts,108
+What is a reward signal?,The immediate feedback from the environment.,RL Concepts,109
+What is a target network in DQN?,A stable network used to compute target Q-values.,DL Concepts,110
+What is a deep belief network?,A generative model with multiple layers of latent variables.,DL Concepts,111
+What is unsupervised pretraining?,Training a model on unlabeled data before fine-tuning.,DL Concepts,112
+What is batch gradient descent?,Using the entire dataset to compute gradients for weight updates.,ML Concepts,113
+What is a learning curve?,Graph showing model performance vs number of training examples.,ML Evaluation,114
+What is early stopping?,Stopping training when performance on validation data stops improving.,ML Evaluation,115
+What is overfitting?,When a model performs well on training data but poorly on unseen data.,ML Evaluation,116
+What is underfitting?,When a model is too simple to capture data patterns.,ML Evaluation,117
+What is cross-validation?,Splitting data multiple times to validate model performance.,ML Evaluation,118
+What is a confusion matrix?,A table to summarize classification results.,ML Evaluation,119
+What is precision?,The ratio of true positives to total predicted positives.,ML Evaluation,120
+What is recall?,The ratio of true positives to total actual positives.,ML Evaluation,121
+What is F1-score?,The harmonic mean of precision and recall.,ML Evaluation,122
+What is ROC curve?,Plot of true positive rate vs false positive rate for different thresholds.,ML Evaluation,123
+What is AUC-ROC?,Area under the ROC curve measuring classifier performance.,ML Evaluation,124
+What is feature importance?,A score indicating how useful a feature is in prediction.,Feature Engineering,125
+What is feature extraction?,Transforming raw data into features for modeling.,Feature Engineering,126
+What is one-hot encoding?,Converting categorical variables into binary vectors.,Feature Engineering,127
+What is label encoding?,Converting categorical labels into numeric form.,Feature Engineering,128
+What is a word2vec model?,A neural network that produces word embeddings.,DL Concepts,129
+What is a fastText model?,Word embeddings including subword information for NLP.,DL Concepts,130
+What is a sequence model?,A model that handles sequential data like text or time series.,DL Concepts,131
+What is attention?,A mechanism to focus on important parts of input sequences.,DL Concepts,132
+What is a transformer?,A neural network architecture using attention mechanisms.,DL Concepts,133
+What is GPT?,A transformer-based language model for text generation.,DL Concepts,134
+What is BERT?,A transformer model for NLP pre-training and fine-tuning.,DL Concepts,135
+What is masked language modeling?,Predicting missing words in a sentence during training.,DL Concepts,136
+What is next-token prediction?,Predicting the next word in a sequence.,DL Concepts,137
+What is text classification?,Assigning categories or labels to text data.,NLP,138
+What is named entity recognition (NER)?,Detecting and classifying proper nouns in text.,NLP,139
+What is sentiment analysis?,Determining the sentiment expressed in text.,NLP,140
+What is topic modeling?,Identifying topics present in a collection of texts.,NLP,141
+What is word embedding?,A numerical vector representing the meaning of a word.,DL Concepts,142
+What is cosine similarity?,A measure of similarity between two vectors.,ML Concepts,143
+What is TF-IDF?,Weighting words based on frequency and uniqueness in documents.,NLP,144
+What is a confusion matrix?,A summary table to evaluate classifier predictions.,ML Evaluation,145
+What is cross-entropy loss?,A loss function for measuring classification errors.,ML Concepts,146
+What is gradient clipping?,Limiting gradients to prevent exploding values in training.,DL Concepts,147
+What is hyperparameter tuning?,Optimizing hyperparameters to improve model performance.,ML Concepts,148
+What is model deployment?,Making a trained model available for real-world use.,AI Basics,149
+What is transfer learning?,Using knowledge from one task to improve performance on another.,DL Concepts,150
+What is a reward in RL?,Feedback given to an agent to indicate success of an action.,RL Concepts,151
+What is Q-value in RL?,Expected cumulative reward of taking an action in a state.,RL Concepts,152
+What is deep reinforcement learning?,Using deep neural networks to approximate functions in RL.,DL Concepts,153
+What is experience replay?,Storing agent experiences to reuse during training.,RL Concepts,154
+What is epsilon-greedy policy?,Choosing random actions with probability epsilon for exploration.,RL Concepts,155
+What is model-free RL?,Learning optimal policies without modeling the environment.,RL Concepts,156
+What is model-based RL?,Learning a model of the environment to plan actions.,RL Concepts,157
+What is a Q-table?,A table storing Q-values for state-action pairs.,RL Concepts,158
+What is a reward signal?,The immediate feedback from the environment.,RL Concepts,159
+What is a target network in DQN?,A stable network used to compute target Q-values.,DL Concepts,160
+What is a deep belief network?,A generative model with multiple layers of latent variables.,DL Concepts,161
+What is unsupervised pretraining?,Training a model on unlabeled data before fine-tuning.,DL Concepts,162
+What is batch gradient descent?,Using the entire dataset to compute gradients for weight updates.,ML Concepts,163
+What is a learning curve?,Graph showing model performance vs number of training examples.,ML Evaluation,164
+What is early stopping?,Stopping training when performance on validation data stops improving.,ML Evaluation,165
+What is overfitting?,When a model performs well on training data but poorly on unseen data.,ML Evaluation,166
+What is underfitting?,When a model is too simple to capture data patterns.,ML Evaluation,167
+What is cross-validation?,Splitting data multiple times to validate model performance.,ML Evaluation,168
+What is a confusion matrix?,A table to summarize classification results.,ML Evaluation,169
+What is precision?,The ratio of true positives to total predicted positives.,ML Evaluation,170
+What is recall?,The ratio of true positives to total actual positives.,ML Evaluation,171
+What is F1-score?,The harmonic mean of precision and recall.,ML Evaluation,172
+What is ROC curve?,Plot of true positive rate vs false positive rate for different thresholds.,ML Evaluation,173
+What is AUC-ROC?,Area under the ROC curve measuring classifier performance.,ML Evaluation,174
+What is feature importance?,A score indicating how useful a feature is in prediction.,Feature Engineering,175
+What is feature extraction?,Transforming raw data into features for modeling.,Feature Engineering,176
+What is one-hot encoding?,Converting categorical variables into binary vectors.,Feature Engineering,177
+What is label encoding?,Converting categorical labels into numeric form.,Feature Engineering,178
+What is a word2vec model?,A neural network that produces word embeddings.,DL Concepts,179
+What is a fastText model?,Word embeddings including subword information for NLP.,DL Concepts,180
+What is a sequence model?,A model that handles sequential data like text or time series.,DL Concepts,181
+What is attention?,A mechanism to focus on important parts of input sequences.,DL Concepts,182
+What is a transformer?,A neural network architecture using attention mechanisms.,DL Concepts,183
+What is GPT?,A transformer-based language model for text generation.,DL Concepts,184
+What is BERT?,A transformer model for NLP pre-training and fine-tuning.,DL Concepts,185
+What is masked language modeling?,Predicting missing words in a sentence during training.,DL Concepts,186
+What is next-token prediction?,Predicting the next word in a sequence.,DL Concepts,187
+What is text classification?,Assigning categories or labels to text data.,NLP,188
+What is named entity recognition (NER)?,Detecting and classifying proper nouns in text.,NLP,189
+What is sentiment analysis?,Determining the sentiment expressed in text.,NLP,190
+What is topic modeling?,Identifying topics present in a collection of texts.,NLP,191
+What is word embedding?,A numerical vector representing the meaning of a word.,DL Concepts,192
+What is cosine similarity?,A measure of similarity between two vectors.,ML Concepts,193
+What is TF-IDF?,Weighting words based on frequency and uniqueness in documents.,NLP,194
+What is a confusion matrix?,A summary table to evaluate classifier predictions.,ML Evaluation,195
+What is cross-entropy loss?,A loss function for measuring classification errors.,ML Concepts,196
+What is gradient clipping?,Limiting gradients to prevent exploding values in training.,DL Concepts,197
+What is hyperparameter tuning?,Optimizing hyperparameters to improve model performance.,ML Concepts,198
+What is model deployment?,Making a trained model available for real-world use.,AI Basics,199
+What is transfer learning?,Using knowledge from one task to improve performance on another.,DL Concepts,200
