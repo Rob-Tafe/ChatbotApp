@@ -22,6 +22,8 @@ mono_crash.*
 [Rr]elease/
 [Rr]eleases/
 x64/
+!Debug/at3_ai_questions.csv
+!Debug/ChatModel.zip
 x86/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
