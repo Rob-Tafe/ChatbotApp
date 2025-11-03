@@ -82,6 +82,7 @@
             this.BtnRebuild.TabIndex = 4;
             this.BtnRebuild.Text = "Load Training Data and Rebuild Model";
             this.BtnRebuild.UseVisualStyleBackColor = true;
+            this.BtnRebuild.Click += new System.EventHandler(this.BtnRebuild_Click);
             // 
             // LabInput
             // 
@@ -136,6 +137,7 @@
             this.Controls.Add(this.TbInput);
             this.Name = "ChatbotApp";
             this.Text = "ChatbotApp";
+            this.Load += new System.EventHandler(this.ChatbotApp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

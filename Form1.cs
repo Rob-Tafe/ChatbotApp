@@ -23,9 +23,17 @@ namespace ChatbotApp
             InitializeComponent();
         }
 
+        private void ChatbotApp_Load(object sender, EventArgs e)
+        {
+            AutoLoadChatModel();
+        }
+
 
         static MLContext chatModelContext;
         static string chatbotFileName = "ChatModel.zip";
+
+        static ITransformer loadedModel;
+        static DataViewSchema loadedModelSchema;
 
 
         // This is the method that will recieve a user's question, send it to
@@ -80,11 +88,29 @@ namespace ChatbotApp
             TbFeedback.Text = $"Model saved to {zipFilePath}";
         }
 
-        private static void modelLoad()
+        private void AutoLoadChatModel()
         {
-            
+            chatModelContext = new MLContext();
+
+            loadedModel = chatModelContext.Model.Load(chatbotFileName, out loadedModelSchema);
+
+            TbFeedback.Text = $"{chatbotFileName} loaded as default.";
         }
 
+        private void BtnRebuild_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private static void modelLoad()
+        {
+            using (OpenFileDialog loadModelZip = new OpenFileDialog())
+            {
+
+            }
+        }
+
+        
     } // End of ChatbotApp : Form partial class.
 
 
