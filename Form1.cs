@@ -65,35 +65,4 @@ namespace ChatbotApp
     } // End of ChatbotApp : Form partial class.
 
 
-    //class chatProgram
-    //{
-    //    static MLContext cbContext;
-    //    static Microsoft.ML.Data.TransformerChain<Microsoft.ML.Transforms.KeyToValueMappingTransformer> ChatModel;
-    //    static IEnumerable<ChatModelClass> chatTrainingData;
-    //    static IEnumerable<ChatModelClass> chatTestingData;
-    //    static String chatbotFileName = "ChatModel.zip";
-
-
-    //}
-
-
-    //public class ChatModelClass
-    //{
-    //    [ColumnName("Question"), LoadColumn(0)]
-    //    public string Question { get; set; }
-    //    [ColumnName("Answer"), LoadColumn(1)]
-    //    public string Answer { get; set; }
-    //}
-
-
-    //public class ChatbotPredictionModel
-    //{
-    //    [ColumnName("PredictedAnswer")]
-    //    public string PredictedAnswer { get; set; }
-
-    //    [ColumnName("Score")]
-    //    public float[] Score { get; set; }
-    //}
-
-
 } // End of ChatbotApp namespace.
