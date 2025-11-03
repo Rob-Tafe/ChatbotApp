@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,10 +23,15 @@ namespace ChatbotApp
             InitializeComponent();
         }
 
+
+        static MLContext chatModelContext;
+        static string chatbotFileName = "ChatModel.zip";
+
+
         // This is the method that will recieve a user's question, send it to
         // the chatbot model, receive an answer from the model, and return that answer
         // to the user.
-        public void chatModel(String chatQuestion)
+        public void askChatModel(String chatQuestion)
         {
             //Load sample data
             var sampleData = new ChatModel.ModelInput()
@@ -44,22 +50,40 @@ namespace ChatbotApp
         // a question and run the chatModel method when the 'Enter' button is clicked.
         private void BtnEnter_Click(object sender, EventArgs e)
         {
-            chatModel(TbInput.Text);
+            askChatModel(TbInput.Text);
 
         } // End of BtnEnter_Click method.
 
         private void BtnSaveModel_Click(object sender, EventArgs e)
         {
-
+            modelSave();
         } // EndOfStreamException of BtnSaveModel_Click method.
 
-        //private static void modelSave()
-        //{
-        //    MLContext chatbotContext = new MLContext();
+        private void modelSave()
+        {
+            chatModelContext = new MLContext();
 
+            ITransformer trainedChatModel;
+            DataViewSchema chatModelSchema;
 
-        //    chatbotContext.Model.Save(ChatModel, DataSetSchemaImporterExtension, chatbotModelPath);
-        //}
+            using (var fileStream = new FileStream("ChatModel.mlnet", FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                trainedChatModel = chatModelContext.Model.Load(fileStream, out chatModelSchema);
+            }
+
+            string zipFilePath = chatbotFileName;
+            using (var fileStream = new FileStream(zipFilePath, FileMode.Create, FileAccess.Write, FileShare.Write))
+            {
+                chatModelContext.Model.Save(trainedChatModel, chatModelSchema, fileStream);
+            }
+
+            TbFeedback.Text = $"Model saved to {zipFilePath}";
+        }
+
+        private static void modelLoad()
+        {
+            
+        }
 
     } // End of ChatbotApp : Form partial class.
 
