@@ -33,6 +33,9 @@
             this.TbChat = new System.Windows.Forms.TextBox();
             this.TbFeedback = new System.Windows.Forms.TextBox();
             this.BtnRebuild = new System.Windows.Forms.Button();
+            this.LabInput = new System.Windows.Forms.Label();
+            this.LabOutput = new System.Windows.Forms.Label();
+            this.LabFeedback = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TbInput
@@ -50,12 +53,14 @@
             this.BtnEnter.TabIndex = 1;
             this.BtnEnter.Text = "Enter";
             this.BtnEnter.UseVisualStyleBackColor = true;
+            this.BtnEnter.Click += new System.EventHandler(this.BtnEnter_Click);
             // 
             // TbChat
             // 
             this.TbChat.Location = new System.Drawing.Point(20, 60);
             this.TbChat.Multiline = true;
             this.TbChat.Name = "TbChat";
+            this.TbChat.ReadOnly = true;
             this.TbChat.Size = new System.Drawing.Size(500, 40);
             this.TbChat.TabIndex = 2;
             // 
@@ -77,11 +82,41 @@
             this.BtnRebuild.Text = "Load Training Data and Rebuild Model";
             this.BtnRebuild.UseVisualStyleBackColor = true;
             // 
+            // LabInput
+            // 
+            this.LabInput.AutoSize = true;
+            this.LabInput.Location = new System.Drawing.Point(20, 5);
+            this.LabInput.Name = "LabInput";
+            this.LabInput.Size = new System.Drawing.Size(106, 13);
+            this.LabInput.TabIndex = 5;
+            this.LabInput.Text = "Enter Question Here:";
+            // 
+            // LabOutput
+            // 
+            this.LabOutput.AutoSize = true;
+            this.LabOutput.Location = new System.Drawing.Point(20, 45);
+            this.LabOutput.Name = "LabOutput";
+            this.LabOutput.Size = new System.Drawing.Size(111, 13);
+            this.LabOutput.TabIndex = 6;
+            this.LabOutput.Text = "Chatbot Answer Here:";
+            // 
+            // LabFeedback
+            // 
+            this.LabFeedback.AutoSize = true;
+            this.LabFeedback.Location = new System.Drawing.Point(20, 105);
+            this.LabFeedback.Name = "LabFeedback";
+            this.LabFeedback.Size = new System.Drawing.Size(153, 13);
+            this.LabFeedback.TabIndex = 7;
+            this.LabFeedback.Text = "Accuracy and Feedback Here:";
+            // 
             // ChatbotApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 181);
+            this.Controls.Add(this.LabFeedback);
+            this.Controls.Add(this.LabOutput);
+            this.Controls.Add(this.LabInput);
             this.Controls.Add(this.BtnRebuild);
             this.Controls.Add(this.TbFeedback);
             this.Controls.Add(this.TbChat);
@@ -101,6 +136,9 @@
         private System.Windows.Forms.TextBox TbChat;
         private System.Windows.Forms.TextBox TbFeedback;
         private System.Windows.Forms.Button BtnRebuild;
+        private System.Windows.Forms.Label LabInput;
+        private System.Windows.Forms.Label LabOutput;
+        private System.Windows.Forms.Label LabFeedback;
     }
 }
 
