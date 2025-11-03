@@ -47,7 +47,6 @@ namespace ChatbotApp
 
         } // End of BtnEnter_Click method.
 
-    } // End of ChatbotApp : Form partial class.
 
 
     class chatProgram
