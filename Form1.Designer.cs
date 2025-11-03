@@ -36,6 +36,7 @@
             this.LabInput = new System.Windows.Forms.Label();
             this.LabOutput = new System.Windows.Forms.Label();
             this.LabFeedback = new System.Windows.Forms.Label();
+            this.BtnSaveModel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TbInput
@@ -109,11 +110,22 @@
             this.LabFeedback.TabIndex = 7;
             this.LabFeedback.Text = "Accuracy and Feedback Here:";
             // 
+            // BtnSaveModel
+            // 
+            this.BtnSaveModel.Location = new System.Drawing.Point(23, 180);
+            this.BtnSaveModel.Name = "BtnSaveModel";
+            this.BtnSaveModel.Size = new System.Drawing.Size(75, 23);
+            this.BtnSaveModel.TabIndex = 8;
+            this.BtnSaveModel.Text = "Save Model";
+            this.BtnSaveModel.UseVisualStyleBackColor = true;
+            this.BtnSaveModel.Click += new System.EventHandler(this.BtnSaveModel_Click);
+            // 
             // ChatbotApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 181);
+            this.ClientSize = new System.Drawing.Size(539, 221);
+            this.Controls.Add(this.BtnSaveModel);
             this.Controls.Add(this.LabFeedback);
             this.Controls.Add(this.LabOutput);
             this.Controls.Add(this.LabInput);
@@ -139,6 +151,7 @@
         private System.Windows.Forms.Label LabInput;
         private System.Windows.Forms.Label LabOutput;
         private System.Windows.Forms.Label LabFeedback;
+        private System.Windows.Forms.Button BtnSaveModel;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,35 +48,52 @@ namespace ChatbotApp
 
         } // End of BtnEnter_Click method.
 
+        private void BtnSaveModel_Click(object sender, EventArgs e)
+        {
+
+        } // EndOfStreamException of BtnSaveModel_Click method.
+
+        //private static void modelSave()
+        //{
+        //    MLContext chatbotContext = new MLContext();
+
+        //    string chatbotModelPath = "ChatModel.zip";
+
+        //    chatbotContext.Model.Save(ChatModel, DataSetSchemaImporterExtension, chatbotModelPath);
+        //}
+
+    } // End of ChatbotApp : Form partial class.
 
 
-    class chatProgram
-    {
-        static MLContext cbContext;
-        static Microsoft.ML.Data.TransformerChain<Microsoft.ML.Transforms.KeyToValueMappingTransformer> ChatModel;
-        static IEnumerable<ChatModelClass> chatTrainingData;
-        static IEnumerable<ChatModelClass> chatTestingData;
-        static String chatbotFileName = "ChatModel.zip";
-    }
+    //class chatProgram
+    //{
+    //    static MLContext cbContext;
+    //    static Microsoft.ML.Data.TransformerChain<Microsoft.ML.Transforms.KeyToValueMappingTransformer> ChatModel;
+    //    static IEnumerable<ChatModelClass> chatTrainingData;
+    //    static IEnumerable<ChatModelClass> chatTestingData;
+    //    static String chatbotFileName = "ChatModel.zip";
 
 
-    public class ChatModelClass
-    {
-        [ColumnName("Question"), LoadColumn(0)]
-        public string Question { get; set; }
-        [ColumnName("Answer"), LoadColumn(1)]
-        public string Answer { get; set; }
-    }
+    //}
 
 
-    public class ChatbotPredictionModel
-    {
-        [ColumnName("PredictedAnswer")]
-        public string PredictedAnswer { get; set; }
+    //public class ChatModelClass
+    //{
+    //    [ColumnName("Question"), LoadColumn(0)]
+    //    public string Question { get; set; }
+    //    [ColumnName("Answer"), LoadColumn(1)]
+    //    public string Answer { get; set; }
+    //}
 
-        [ColumnName("Score")]
-        public float[] Score { get; set; }
-    }
+
+    //public class ChatbotPredictionModel
+    //{
+    //    [ColumnName("PredictedAnswer")]
+    //    public string PredictedAnswer { get; set; }
+
+    //    [ColumnName("Score")]
+    //    public float[] Score { get; set; }
+    //}
 
 
 } // End of ChatbotApp namespace.
