@@ -163,7 +163,19 @@ namespace ChatbotApp
             TbFeedback.Text = $"Model loaded: {Path.GetFileName(zipFilePath)}";
         } // End of BuildModel method.
 
-        
+        // This method calls the AskChatModel when the enter key is pressed
+        // in the TbInput textbox.
+        private void TbInput_KeyDown(object sender, KeyEventArgs enterPressed)
+        {
+            if (enterPressed.KeyCode == Keys.Enter)
+            {
+                AskChatModel(TbInput.Text);
+                enterPressed.SuppressKeyPress = true;
+                enterPressed.Handled = true;
+            }
+        } // End of TbInput_KeyDown method.
+
+
     } // End of ChatbotApp : Form partial class.
 
 

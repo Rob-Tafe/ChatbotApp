@@ -45,6 +45,7 @@
             this.TbInput.Name = "TbInput";
             this.TbInput.Size = new System.Drawing.Size(400, 20);
             this.TbInput.TabIndex = 0;
+            this.TbInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbInput_KeyDown);
             // 
             // BtnEnter
             // 
