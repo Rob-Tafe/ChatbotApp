@@ -8,7 +8,7 @@
     "KeepPunctuations": false,
     "AllowQuoting": true,
     "Type": "TabularFile",
-    "FilePath": "C:\\Users\\p214430\\Downloads\\at3_ai_questions.csv",
+    "FilePath": "D:\\Programs\\Visual Studio Projects\\ChatbotApp\\bin\\x64\\Debug\\at3_ai_questions.csv",
     "Delimiter": ",",
     "DecimalMarker": ".",
     "HasHeader": true,
@@ -255,7 +255,7 @@
     "Subsampling": false,
     "Tuner": "eci-cfo",
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 85,
+    "TrainingTime": 10,
     "OptimizeMetric": "LogLoss",
     "LabelColumn": "Answer",
     "AvailableTrainers": [

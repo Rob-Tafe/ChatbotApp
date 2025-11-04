@@ -1,4 +1,13 @@
-﻿using Microsoft.ML;
+﻿/*
+ * Author:      Robert Sewell 
+ * Student ID:  P214430
+ * Date:        04/11/2025
+ * 
+ * Unit:        Cluster - Artificial Intelligence Skill Set
+ * Project:     Assessment 3 - Task 3 - Build a Chatbot
+ */
+
+using Microsoft.ML;
 using Microsoft.ML.Data;
 using System;
 using System.Collections.Generic;
@@ -18,39 +27,44 @@ namespace ChatbotApp
     public partial class ChatbotApp : Form
     {
 
+        // This initialises our form.
         public ChatbotApp()
         {
             InitializeComponent();
-        }
+        } // End of ChatbotApp.
 
+        // This is the method that runs immediately on form loading.
         private void ChatbotApp_Load(object sender, EventArgs e)
         {
             AutoLoadChatModel();
-        }
+        } // End of ChatbotApp_Load method.
 
-
-        static MLContext chatModelContext;
+        // These are the fields that govern the chatbot app, most methods refer to,
+        // or modify these fields as required.
+        static MLContext chatModelContext = new MLContext();
         static string chatbotFileName = "ChatModel.zip";
 
         static ITransformer loadedModel;
         static DataViewSchema loadedModelSchema;
 
+        static PredictionEngine<ChatModel.ModelInput, ChatModel.ModelOutput> predictEng;
+        // End of chatbot fields
 
         // This is the method that will recieve a user's question, send it to
         // the chatbot model, receive an answer from the model, and return that answer
         // to the user.
-        public void askChatModel(String chatQuestion)
+        public void AskChatModel(String chatQuestion)
         {
             //Load sample data
-            var sampleData = new ChatModel.ModelInput()
+            var chatInput = new ChatModel.ModelInput
             {
                 Question = chatQuestion,
             };
 
             //Load model and predict output
-            var result = ChatModel.Predict(sampleData);
+            var result = predictEng.Predict(chatInput);
             TbChat.Text = $"{result.PredictedLabel}";
-            TbFeedback.Text = $"Model Confidence (Label score): {result.Score.Max()}";
+            TbFeedback.Text = $"Model Confidence (Label score): {result.Score.Max():F4}";
 
         } // End of chatModel method.
 
@@ -58,16 +72,19 @@ namespace ChatbotApp
         // a question and run the chatModel method when the 'Enter' button is clicked.
         private void BtnEnter_Click(object sender, EventArgs e)
         {
-            askChatModel(TbInput.Text);
+            AskChatModel(TbInput.Text);
 
         } // End of BtnEnter_Click method.
 
+        // This is the method that will call our save function
         private void BtnSaveModel_Click(object sender, EventArgs e)
         {
-            modelSave();
-        } // EndOfStreamException of BtnSaveModel_Click method.
+            ModelSave();
+        } // End of BtnSaveModel_Click method.
 
-        private void modelSave()
+        // This method was used to save the ChatModel.mlnet as a zip file for
+        // portability.
+        private void ModelSave()
         {
             chatModelContext = new MLContext();
 
@@ -86,28 +103,65 @@ namespace ChatbotApp
             }
 
             TbFeedback.Text = $"Model saved to {zipFilePath}";
-        }
+        } // End of ModelSave method.
 
+        // This method automatically loads the default model for use in the chatbot.
         private void AutoLoadChatModel()
         {
-            chatModelContext = new MLContext();
+            string defaultModelPath = Path.Combine(Application.StartupPath, chatbotFileName);
+            BuildModel(defaultModelPath);
+        } // End of AutoLoadChatModel method.
 
-            loadedModel = chatModelContext.Model.Load(chatbotFileName, out loadedModelSchema);
-
-            TbFeedback.Text = $"{chatbotFileName} loaded as default.";
-        }
-
+        // This method calls our ModelLoadRebuild method.
         private void BtnRebuild_Click(object sender, EventArgs e)
         {
+            ModelLoadRebuild();
+        } // End of BtnRebuild_Click method.
 
-        }
-
-        private static void modelLoad()
+        // This method allows a user to select a different model for use in
+        // the chatbot, and rebuilds it automatically once they have chosen a file.
+        private void ModelLoadRebuild()
         {
-            using (OpenFileDialog loadModelZip = new OpenFileDialog())
+            if (chatModelContext == null)
             {
-
+                chatModelContext = new MLContext();
             }
+
+            TbFeedback.Text = "Select a .zip file to rebuild the Chatbot with.";
+
+            using (OpenFileDialog loadModel = new OpenFileDialog())
+            {
+                loadModel.InitialDirectory = Application.StartupPath;
+                loadModel.Title = "Select Model to Load & Rebuild Chatbot with";
+                loadModel.Filter = "ZIP files|*.zip";
+
+                if (loadModel.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+                    
+                string selectedModelPath = loadModel.FileName;
+                {
+                    try
+                    {
+                        BuildModel(selectedModelPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        TbFeedback.Text = $"Error: Could not read file from disk. {ex.Message}";
+                    }
+                }
+            }
+        } // End of ModelLoadRebuild method.
+
+        // This method builds the model that was selected or automatically loaded
+        // by either the ModelLoadRebuild or AutoLoadChatModel methods.
+        private void BuildModel(string zipFilePath)
+        {
+            loadedModel = chatModelContext.Model.Load(zipFilePath, out loadedModelSchema);
+            predictEng = chatModelContext.Model.CreatePredictionEngine<ChatModel.ModelInput, ChatModel.ModelOutput>(loadedModel);
+            TbFeedback.Text = $"Model loaded: {Path.GetFileName(zipFilePath)}";
+        } // End of BuildModel method.
 
         
     } // End of ChatbotApp : Form partial class.
