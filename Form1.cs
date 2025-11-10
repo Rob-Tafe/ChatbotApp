@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -63,8 +64,15 @@ namespace ChatbotApp
 
             //Load model and predict output
             var result = predictEng.Predict(chatInput);
-            TbChat.Text = $"{result.PredictedLabel}";
-            TbFeedback.Text = $"Model Confidence (Label score): {result.Score.Max():F4}";
+
+            if (result.Score.Max() >= 0.2) {
+                TbChat.Text = $"{result.PredictedLabel}";
+                TbFeedback.Text = $"Model Confidence (Label score): {result.Score.Max():F2}";
+            }
+            else {
+                TbChat.Text = $"Sorry, I am not confident that I have an accurate answer to your question :(";
+                TbFeedback.Text = $"Model Confidence (Label score): {result.Score.Max():F2}, (Cut off: 0.2)";
+            }
 
         } // End of chatModel method.
 
