@@ -169,6 +169,7 @@ namespace ChatbotApp
             loadedModel = chatModelContext.Model.Load(zipFilePath, out loadedModelSchema);
             predictEng = chatModelContext.Model.CreatePredictionEngine<ChatModel.ModelInput, ChatModel.ModelOutput>(loadedModel);
             TbFeedback.Text = $"Model loaded: {Path.GetFileName(zipFilePath)}";
+            TbChat.Clear();
         } // End of BuildModel method.
 
         // This method calls the AskChatModel when the enter key is pressed
